@@ -1,53 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
   <title>Pat's Salmon Cookies</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
+
 <body id="home">
   <!-- <a href="/sales">Sales</a> -->
   <!-- <p>Hello, {{name}}</p> -->
-  <h1>Pat's Salmon Cookies</h1>
-  <div class="container">
-      <img src="img/salmon.png" alt="Salmon" style="width:100%;">
-      <div class="centered"></div>
-  </div>
+  {% block header %}
+    <header>
+      <h1>Pat's Salmon Cookies</h1>
+        <div class="container">
+            <img src="img/salmon.png" alt="Salmon" style="width:100%;">
+            <div class="centered"></div>
+        </div>
 
-   <nav>
-      <a href="sales.html">Sales Projections</a>
-      <a href="Human Treats">Human Treats</a>
-      <a href="Dog Treats">Dog Treats</a>
-      <a href="Locations">Locations</a>
-      <a href="About Us">About Us</a>
-      <a href="FAQ">FAQ</a>
-      <a href="Order Online">Order</a>
-  </nav>
+        <nav>
+            <a href="sales.html">Sales Projections</a>
+            <a href="Human Treats">Human Treats</a>
+            <a href="Dog Treats">Dog Treats</a>
+            <a href="Locations">Locations</a>
+            <a href="About Us">About Us</a>
+            <a href="FAQ">FAQ</a>
+            <a href="Order Online">Order</a>
+        </nav>
+    </header>
+  {% endblock %}
 
    <p>Seattle, Washington is notorious for its coffee and its four-legged friend inclusivity. Here at Pat's Salmon Cookies, we believe that cookies should be inclusive too!</p>
   <hr />
 
- <h2>Select your city</h2>
+  {% block content %}
+  <div id="content">
+    <h2>Select your city</h2>
 
- <ul>
-  <li>First and Pike</li>
-  <div id="firstPike">
-      <img src="img/Pike-Place.png" alt="Pike Place Market on a sunny Seattle day." /></div>
-  <li>SeaTac</li>
-  <div id="SeaTac">
-      <img src="img/SeaTac.png" alt="SeaTac International Aiport has an excellent reputation." /></div>
-  <li>Seattle Center</li>
-  <div id="SeaCenter">
-      <img src="img/Seattle-Center.png" alt="Seattle Center is the area for food lovers." /></div>    
-  <li>Capitol Hill</li>
-  <div id="capitolHill">
-      <img src="img/Capitol-Hill.png" alt="Capitol Hill in Seattle is the area for food lovers." /></div>              
-  <li>Alki</li>
-  <div id="Alki">
-      <img src="img/Alki.png" alt="Alki is one of the safest neighborhoods." /></div>    
-</ul>
+    <ul>
+      <li>First and Pike</li>
+      <div id="firstPike">
+          <img src="img/Pike-Place.png" alt="Pike Place Market on a sunny Seattle day." /></div>
+      <li>SeaTac</li>
+      <div id="SeaTac">
+          <img src="img/SeaTac.png" alt="SeaTac International Aiport has an excellent reputation." /></div>
+      <li>Seattle Center</li>
+      <div id="SeaCenter">
+          <img src="img/Seattle-Center.png" alt="Seattle Center is the area for food lovers." /></div>    
+      <li>Capitol Hill</li>
+      <div id="capitolHill">
+          <img src="img/Capitol-Hill.png" alt="Capitol Hill in Seattle is the area for food lovers." /></div>              
+      <li>Alki</li>
+      <div id="Alki">
+          <img src="img/Alki.png" alt="Alki is one of the safest neighborhoods." /></div>    
+    </ul>
+  </div>
+  {% endblock %}
+
+  {% block footer %}
+    <footer>
+      <h4> Pat's Salmon Cookies. Serving Seattle since 2015.</h4>
+    </footer>
+  {% endblock %}
+
+
 
   <script src="{{ url_for('static', filename='js/app.js') }}"> 
   </script>
