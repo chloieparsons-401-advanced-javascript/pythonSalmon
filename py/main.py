@@ -1,13 +1,12 @@
 from settings import NAME
 from flask import Flask, render_template
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='')
 
 
 @app.route('/')
-def hello_world():
-    print('Chloie:, Chloie')
-    f"NAME: {NAME}"
+def hello():
+    print(f"NAME: {NAME}")
     return render_template("hello.html", name=NAME)
 
 
