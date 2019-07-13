@@ -1,5 +1,6 @@
 'use strict';
 
+
 // Lines 6 - 102 are the factory and its production; lines 103 & onward are when the product ships
 // Definitions: Global
 var stores = [];
