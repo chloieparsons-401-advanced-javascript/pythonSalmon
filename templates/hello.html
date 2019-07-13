@@ -10,28 +10,28 @@
 <body id="home">
   <!-- <a href="/sales">Sales</a> -->
   <!-- <p>Hello, {{name}}</p> -->
-  {% block header %}
-  <div id="container">
-    <h1>Pat's Salmon Cookies</h1>
-      <img src="../assets/salmon.png" alt="Salmon">
-    <nav>
-        <a href="sales.html">Sales Projections</a>
-        <a href="Human Treats">Human Treats</a>
-        <a href="Dog Treats">Dog Treats</a>
-        <a href="Locations">Locations</a>
-        <a href="About Us">About Us</a>
-        <a href="FAQ">FAQ</a>
-        <a href="Order Online">Order</a>
-    </nav>
+  <h1>Pat's Salmon Cookies</h1>
+  <div class="container">
+      <img src="img/salmon.png" alt="Salmon" style="width:100%;">
+      <div class="centered"></div>
   </div>
-  {% endblock %}
 
-  <p>Seattle, Washington is notorious for its coffee and its four-legged friend inclusivity. Here at Pat's Salmon Cookies, we believe that cookies should be inclusive too!</p>
+   <nav>
+      <a href="sales.html">Sales Projections</a>
+      <a href="Human Treats">Human Treats</a>
+      <a href="Dog Treats">Dog Treats</a>
+      <a href="Locations">Locations</a>
+      <a href="About Us">About Us</a>
+      <a href="FAQ">FAQ</a>
+      <a href="Order Online">Order</a>
+  </nav>
+
+   <p>Seattle, Washington is notorious for its coffee and its four-legged friend inclusivity. Here at Pat's Salmon Cookies, we believe that cookies should be inclusive too!</p>
   <hr />
 
-<h2>Select your city</h2>
+ <h2>Select your city</h2>
 
-<ul>
+ <ul>
   <li>First and Pike</li>
   <div id="firstPike">
       <img src="img/Pike-Place.png" alt="Pike Place Market on a sunny Seattle day." /></div>
@@ -49,11 +49,7 @@
       <img src="img/Alki.png" alt="Alki is one of the safest neighborhoods." /></div>    
 </ul>
 
-
-
-
-<script src="./js/sales.js"></script>
-
-  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"> 
+  </script>
 </body>
 </html>
