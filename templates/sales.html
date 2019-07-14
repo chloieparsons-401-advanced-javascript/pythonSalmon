@@ -1,62 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/sales.css') }}">
   <title>Pat's Salmon Cookies: Sales Report</title>
 </head>
-<body>
-  <!-- <a href="/">Home</a>
-  <p>Total: {{total}}</p> -->
-  <h1>Pat's Salmon Cookies</h1>
-  <div class="container">
-      <img src="img/salmon.png" alt="Salmon" style="width:100%;">
-      <div class="centered"></div>
-  </div>
+<body id="sales">
+  {% block header %}
+    <header>
+      <h1>Pat's Salmon Cookies</h1>
+        <div class="container">
+            <img src="{{ url_for('static', filename='assets/salmon.png') }}" alt="Salmon" style="width:100%;">
+            <div class="centered"></div>
+        </div>
 
-  <nav>
-      <a href="sales.html">Sales Projections</a>
-      <a href="Human Treats">Human Treats</a>
-      <a href="Dog Treats">Dog Treats</a>
-      <a href="Locations">Locations</a>
-      <a href="About Us">About Us</a>
-      <a href="FAQ">FAQ</a>
-      <a href="Order Online">Order</a>
-  </nav>
+        <nav>
+            <a href="{{ url_for('hello')) }}">Home</a>
+            <a href="Human Treats">Human Treats</a>
+            <a href="Dog Treats">Dog Treats</a>
+            <a href="Locations">Locations</a>
+            <a href="About Us">About Us</a>
+            <a href="FAQ">FAQ</a>
+            <a href="Order Online">Order</a>
+        </nav>
+    </header>
+  {% endblock %}
 
   <p>Seattle, Washington is notorious for its coffee and its four-legged friend inclusivity. Here at Pat's Salmon Cookies, we believe that cookies should be inclusive too!</p>
   <hr />
 
-<h2>Daily Sales Projections By Location</h2>
+  {% block content %}
+  <div id="salesContent">
 
-<div id="Shops_Header">
-<img src="img/Shops_HeaderA.jpg" alt="Pat's five shops as of 2019." />
-</div>
+    <h2>Daily Sales Projections By Location</h2>
 
-<table>
-<thead id="Hours_Open"></thead>
-<tbody id="tableBody"></tbody>    
-<tfoot id="Hourly_Total"></tfoot>
-</table>
+    <div id="Shops_Header">
+    <img src="{{ url_for('templates', filename='AllShops_Header.jpg') }}" alt="Pat's five shops as of 2019." />
+    </div>
+  {% endblock %}
 
-<section id="Below_Table">
-<form id="Store_Input">
-  <fieldset>
-      <legend>Store Data</legend>
-      <label>Store Name</label>
-      <input name="name" type="text" required value="Old Mill">
-      <label>Minimum Customers</label>
-      <input name="minimum" type="number" required value="1">
-      <label>Maximum Customers</label>
-      <input name="maximum" type="number" required value="10">
-      <label>Average Cookies Sold</label>
-      <input name="average" type="number" required value="3">
-  </fieldset>
-  <button id="submit" type="submit">Submit</button>
-</form>
-</section>
+  {% block table %}
+    <table>
+    <thead id="Hours_Open"></thead>
+    <tbody id="tableBody"></tbody>    
+    <tfoot id="Hourly_Total"></tfoot>
+    </table>
+
+    <section id="Below_Table">
+    <form id="Store_Input">
+      <fieldset>
+          <legend>Store Data</legend>
+          <label>Store Name</label>
+          <input name="name" type="text" required value="Old Mill">
+          <label>Minimum Customers</label>
+          <input name="minimum" type="number" required value="1">
+          <label>Maximum Customers</label>
+          <input name="maximum" type="number" required value="10">
+          <label>Average Cookies Sold</label>
+          <input name="average" type="number" required value="3">
+      </fieldset>
+      <button id="submit"   type="submit">Submit</button>
+    </form>
+    </section>
+    {% endblock %}
   
   <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
